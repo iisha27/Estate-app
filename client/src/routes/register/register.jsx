@@ -2,7 +2,7 @@
   import { Link, useNavigate } from "react-router-dom";
   import axios from "axios";
   import { useState } from "react";
-import apiRequest from "../../../../api/lib/apiRequest";
+import apiRequest from "../../lib/apiRequest";
 
 
 
