@@ -10,6 +10,12 @@ function ProfilePage() {
 
   const {updateUser, currentUser} =useContext(AuthContext);
    const navigate=useNavigate();
+
+  //  useEffect(()=>{
+  //    if(!currentUser){
+  //     navigate("/login");
+  //    }
+  //  }, [currentUser, navigate])
   const handleLogout=async () =>{
     try{
       await apiRequest.post("/auth/logout");
@@ -20,7 +26,7 @@ function ProfilePage() {
       console.log(err);
     }
   }
-  return (
+  return  (
     <div className="profilePage">
       <div className="details">
         <div className="wrapper">
@@ -32,7 +38,7 @@ function ProfilePage() {
             <span>
               Avatar:
               <img
-                src={currentUser.avatar||"noavatar.jpg"}
+                src={currentUser.avatar || "noavatar.jpg"}
                 alt=""
               />
             </span>
@@ -61,6 +67,7 @@ function ProfilePage() {
         </div>
       </div>
     </div>
+    
   );
 }
 
