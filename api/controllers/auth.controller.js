@@ -52,7 +52,7 @@ export const login = async (req, res) =>{
 
    //  res.setHeader("Set-Cookie", "test=" + "myValue").json({message:"suceess"})
    
-   const age = 1000*60*60*24*7;
+   const age = 10000*60*60*24*7;
    const token= jwt.sign({
       id:user.id,
       isAdmin:false,
@@ -62,7 +62,7 @@ export const login = async (req, res) =>{
 
    res.cookie("token", token, {
       httpOnly:true,
-     // secure:true
+      //secure:true,
      maxAge:age, 
    })
    .status(200)
